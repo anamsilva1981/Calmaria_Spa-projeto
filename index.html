@@ -22,10 +22,9 @@
 </head>
 
 <body>
-
     <header class="cabecalho">
         <nav class="cabecalho__nav">
-            <a href="#">
+            <a aria-label="Acessar pagina da calmaria SPA" href="#">
                 <img class="cabecalho__nav--logo" src="./assets/logo.png" alt="logo da calmaria">
             </a>
             <span class="cabecalho__nav--line"></span>
@@ -41,7 +40,7 @@
         <section class="container__primeiro">
             <div class="container__primeiro--texto">
                 <h1>Boas-vindas ao seu refúgio de <span>bem-estar</span></h1>
-                <button class="container__primeiro--texto-botao">Quero relaxar</button>
+                <button aria-label="botao de quero relaxar" class="container__primeiro--texto-botao">Quero relaxar</button>
             </div>
             <img class="container__primeiro--imagem" src="./assets/home-image.png" alt="Mulher recebendo massagem deitada de bruços com a cabeça de lado sobre os braços cruzados e expressão de tranquilidade.">
         </section>
@@ -53,7 +52,7 @@
                     <h2 class="container__secao--conteudo--textos-titulo">Tecnologia e natureza no seu relaxamento</h2>
                     <p class="container__secao--conteudo--textos-infos">Equipamentos de ponta, produtos certificados e
                         uma equipe qualificada te ajudam a se livrar do stress com equilíbrio e tranquilidade.</p>
-                    <object tabindex="-1" data="./assets/separador-direita.svg" type="image/svg+xml"></object>
+                    <object aria-hidden="true" tabindex="-1" data="./assets/separador-direita.svg" type="image/svg+xml"></object>
                 </article>
             </article>
             <article class="container__secao--conteudo">
@@ -61,7 +60,7 @@
                     <h2 class="container__secao--conteudo--textos-titulo">Elevando o seu bem-estar</h2>
                     <p class="container__secao--conteudo--textos-infos">Cada visita é uma jornada. Não importa a sua
                         rotina, aqui você encontra seu paraíso particular.</p>
-                    <object tabindex="-1" data="./assets/separador-esquerda.svg" type="image/svg+xml"></object>
+                    <object aria-hidden="true" tabindex="-1" data="./assets/separador-esquerda.svg" type="image/svg+xml"></object>
                 </article>
                 <div>
                     <img class="container__secao--conteudo--img2" src="./assets/espaco-2.png" alt="Busto de uma mulher de costas em uma banheira de espumas segurando uma taça e de frente a uma porta de vidro com grandes pedras atrás.">
@@ -102,8 +101,11 @@
                 <p class="container__incricao--form-texto">Cadastre-se em nossa <span lang="en">newsletter</span> para receber descontos e
                     novidades sobre nossos serviços.</p>
                 <div class="container__incricao--form-input">
+                    <label for="inscricao">Digite seu email</label> 
+                    
                     <input id="inscricao" type="email">
-                    <button>Inscrever</button>
+                    
+                    <button type="submit" aria-label="Botão cadastre-se para obter desconto">Inscrever</button>
                 </div>
             </div>
             <img class="container__incricao--mobile" src="./assets/mandala-inferior-mobile.svg" alt="">
@@ -116,7 +118,7 @@
                 <img src="./assets/contato-img-2.png" alt="Mulher em uma banheira olhando horizonte na janela.">
                 <img src="./assets/contato-img-3.png" alt="Mulher em uma banheira com pétalas de rosa, com apenas mãos e pernas aparentes, segurando um livro e com uma bandeija com uvas e chá.">
             </div>
-            <div action="." id="contato-formulario" class="container__contato--form">
+            <form action="." id="contato-formulario" class="container__contato--form">
                 <div class="container__contato--form-conteudo">
                     <h5 class="container__contato--form-conteudo-titulo">Entre em contato</h5>
                     <p class="container__contato--form-conteudo-texto">Reserve seu horário, tire dúvidas ou proponha
@@ -125,34 +127,34 @@
                         você!</p>
                 </div>
                 <div class="container__contato--inputs">
-                    <label>Nome</label>
-                    <input type="text">
-                    <label>Email</label>
-                    <input type="email">
-                    <label>Telefone</label>
-                    <input type="text">
-                    <div>
-                        <p class="container__contato--inputs--titulo">Prefere contato por:</p>
+                    <label for="nome">Nome</label>
+                    <input type="text" placeholder="Digite seu nome completo" id="nome" name="nome" required>
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Digite seu email" id="email" name="email" required>
+                    <label for="telefone">Telefone</label>
+                    <input type="text" placeholder="(XX) XXXX-XXXX" id="telefone" name="telefone" required>
+                    <fieldset>
+                        <legend class="container__contato--inputs--titulo">Prefere contato por:</legend>
                         <div class="container__contato--inputs--div">
                             <div>
-                                <input type="radio">
-                                <label>Ligação</label>
+                                <input type="radio" id="ligacao" name="ligacao" aria-label="botão de seleção de ligação">
+                                <label for="ligacao">Ligação</label>
                             </div>
                             <div>
-                                <input type="radio">
-                                <label>WhatsApp</label>
+                                <input type="radio" id="whastapp" name="whatsapp" aria-label="botão de seleção de whatsApp">
+                                <label for="whatsapp">WhatsApp</label>
                             </div>
                             <div>
-                                <input type="radio">
-                                <label>Email</label>
+                                <input type="radio" id="email-contato" name="email-contato" aria-label="botão de seleção de email">
+                                <label for="email-contato">Email</label>
                             </div>
                         </div>
-                    </div>
-                    <label>Mensagem</label>
-                    <textarea type="text"></textarea>
+                    </fieldset>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea type="text" placeholder="Escreva sua mensagem" id="mensagem" name="mensagem" maxlength="500"></textarea>
                 </div>
-                <button>Enviar</button>
-            </div>
+                <button type="submit" aria-label="Enviar formulario de contato">Enviar</button>
+            </form>
         </section>
     </main>
 
@@ -160,14 +162,13 @@
         <address>
             Acesse nossas redes:<br>
             <ul class="rodape__nav--lista">
-                <li><a href="#" class="rodape__nav--lista--whatsapp"></a></li>
-                <li><a href="#" class="rodape__nav--lista--instagram"></a></li>
-                <li><a href="#" class="rodape__nav--lista--tiktok"></a></li>
+                <li><a aria-label="Whatsapp da Camlaria SPA" href="#" class="rodape__nav--lista--whatsapp" ></a></li>
+                <li><a aria-label="Instagram da Camlaria SPA" href="#" class="rodape__nav--lista--instagram"></a></li>
+                <li><a aria-label="Tiktok da Camlaria SPA" href="#" class="rodape__nav--lista--tiktok"></a></li>
             </ul>
             <small>Desenvolvido por Alura. Projeto fictício sem fins comerciais.</small>
         </address>
     </footer>
-
 
 </body>
 
